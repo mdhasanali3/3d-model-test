@@ -19,11 +19,18 @@
         android:orientation="horizontal" >
 
         <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cube"
+        android:text="cube"
+        />
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cube"
-            android:text="cube"
-        />
+            android:id="@+id/circle"
+            android:text="circle"
+            />
 
         <Button
             android:layout_width="wrap_content"

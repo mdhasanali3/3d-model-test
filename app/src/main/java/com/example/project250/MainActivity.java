@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArFragment arFragment;
         private  enum  Shapetype{
-            Cube,Sphere,Cylinder
+            Cube,Sphere,Cylinder,Circle,
         }
 
         private Shapetype shapetype=Shapetype.Cube;
@@ -40,13 +40,14 @@ public class MainActivity extends AppCompatActivity {
         Button cube=findViewById(R.id.cube);
         Button sphere =findViewById(R.id.spehere);
         Button cylinder =findViewById(R.id.cylinder);
-
+        Button circle =findViewById(R.id.circle);
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
 
             if(shapetype==Shapetype.Cube)
                 placecube(hitResult.createAnchor());
             else if(shapetype==Shapetype.Cylinder)
                 placecylinder(hitResult.createAnchor());
+
             else
                 placesphere(hitResult.createAnchor());
 
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         cube.setOnClickListener(view->shapetype=Shapetype.Cube);
         sphere.setOnClickListener(view->shapetype=Shapetype.Sphere);
         cylinder.setOnClickListener(view->shapetype=Shapetype.Cylinder);
-
+        circle.setOnClickListener(view->shapetype=Shapetype.Circle);
 
 
 
@@ -65,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
     private void placesphere(Anchor anchor) {
         MaterialFactory
